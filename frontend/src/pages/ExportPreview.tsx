@@ -36,7 +36,7 @@ export function ExportPreview() {
           fontSize={fontSize}
           isExporting={isExporting}
           margin={margin}
-          onExport={() => exportPdf(`${resume.title || 'resume'}.pdf`, margin)}
+          onExport={() => exportPdf(`${resume.title || 'resume'}.pdf`)}
           onFontSizeChange={setFontSize}
           onMarginChange={setMargin}
         />
