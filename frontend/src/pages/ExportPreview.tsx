@@ -28,7 +28,7 @@ export function ExportPreview() {
             <ArrowLeft size={15} aria-hidden /> 返回编辑
           </Link>
           <h1 className="mt-3 font-display text-4xl font-semibold">PDF 导出预览</h1>
-          <p className="mt-2 text-sm text-[var(--muted)]">按 A4 比例渲染，导出前可调整页边距和字号。</p>
+          <p className="mt-2 text-sm text-[var(--muted)]">按 A4 纸张分页渲染，导出前可调整页边距和字号。</p>
         </div>
       </div>
       <div className="mt-6 grid gap-6 lg:grid-cols-[300px_1fr]">
@@ -36,7 +36,7 @@ export function ExportPreview() {
           fontSize={fontSize}
           isExporting={isExporting}
           margin={margin}
-          onExport={() => exportPdf(`${resume.title || 'resume'}.pdf`, margin)}
+          onExport={() => exportPdf(`${resume.title || 'resume'}.pdf`)}
           onFontSizeChange={setFontSize}
           onMarginChange={setMargin}
         />

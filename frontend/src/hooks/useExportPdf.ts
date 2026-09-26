@@ -6,7 +6,7 @@ export function useExportPdf(elementRef: RefObject<HTMLElement>) {
   const [error, setError] = useState<string | null>(null);
 
   const exportPdf = useCallback(
-    async (filename: string, margin: number) => {
+    async (filename: string) => {
       if (!elementRef.current) {
         setError('没有找到可导出的预览区域');
         return;
@@ -15,7 +15,7 @@ export function useExportPdf(elementRef: RefObject<HTMLElement>) {
       setIsExporting(true);
       setError(null);
       try {
-        await exportElementToPdf(elementRef.current, { filename, margin });
+        await exportElementToPdf(elementRef.current, { filename });
       } catch (caughtError) {
         setError(caughtError instanceof Error ? caughtError.message : '导出失败');
       } finally {
